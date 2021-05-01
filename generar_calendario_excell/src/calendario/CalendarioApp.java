@@ -17,7 +17,9 @@ public class CalendarioApp {
 		
 		System.out.print("Introduce el año para generar el calendario en Excell: ");
 		año = sc.nextInt();
+		
 		Calendario calendario = new Calendario(año);
+		calendario.escribirEnExcell();
 		
 		
 		sc.close();

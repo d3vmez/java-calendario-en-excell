@@ -126,14 +126,14 @@ public class Calendario {
 		
 		// escritura de los nombres de los dias
 		for (int j = 0; j < DIAS.length; j++) {
-			Label etiqueta = new Label(j, 2, DIAS[j]);
+			Label etiqueta = new Label(j, 1, DIAS[j]);
 			etiqueta.setCellFormat(formatoDias);
 			sheet.addCell(etiqueta);
 		}
 
 		// escritura de la primera semana del mes
 		for (int j = calcularDiaEmpiezaMes(numeroSheet); j < DIAS.length; j++) {
-			Number number = new Number(j, 3, dias);
+			Number number = new Number(j, 2, dias);
 			
 			// Si es sábado o domingo se pone en negrita verde
 			if (j == 5 || j == 6) {
@@ -149,7 +149,7 @@ public class Calendario {
 
 		// escritura de las restantes semanas
 		// le sumo 1 al numero de semanas porque Calendar como máximo se saca 5 semanas
-		for (int i = 4; i <= calcularSemanasDelMes(numeroSheet) + 1; i++) {
+		for (int i = 3; i <= calcularSemanasDelMes(numeroSheet) + 1; i++) {
 			for (int j = 0; j < DIAS.length; j++) {
 
 				if (!(dias > calcularDiasDelMes(numeroSheet))) {
